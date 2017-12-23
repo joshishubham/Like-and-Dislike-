@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+    <link rel="stylesheet" href="./css/css/bootstrap.min.css">
+    
+<script type="text/javascript" src = "./js/angular.js"></script>
+
+<body ng-app = "add"><br>
+
+<div class = "col-md-3"></div>
+<div class = "col-md-6 well" >
+<table class = "table table-bordered" ng-controller = "control">
+
+	<thead>
+		<tr>
+			<th><center>Programing Language</center></th>
+            <th><center>Like</center></th>
+			<th><center>Dislike</center></th>
+			<th><center>Action</center></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat = "rep in reps">
+			<td><center>{{rep.name}}</center></td>
+			<td><center>{{rep.Likes}}</center></td>
+			<td><center>{{rep.Dislikes}}</center></td>
+			<td><center><button class = "btn btn-primary" ng-click =  "Plus(rep)"><span class = "glyphicon glyphicon-thumbs-up"></span></button> | <button class = "btn btn-danger" ng-click = "sub(rep)"><span class = "glyphicon glyphicon-thumbs-down"></span></button></center></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<script>
+<!--
+      onerror = showError
+
+        function showError(x, y, z) {
+        	 
+        	 alert(x+" "+y+" "+z)
+        }
+            
+            var app = angular.module("add", []);
+
+            app.controller('control', function ($scope) {
+
+            	var reps = [
+                  
+			        {name: "C", Likes: 0, Dislikes: 0},
+					{name: "C++", Likes: 0, Dislikes: 0},
+					{name: "C#", Likes: 0, Dislikes: 0},
+					{name: "Java", Likes: 0, Dislikes: 0},
+					{name: "HTML", Likes: 0, Dislikes: 0},
+					{name: "PHP", Likes: 0, Dislikes: 0},
+					{name: "VB.NET", Likes: 0, Dislikes: 0},
+					{name: "Python", Likes: 0, Dislikes: 0},
+					{name: "Pearl", Likes: 0, Dislikes: 0},
+					{name: "javascript", Likes: 0, Dislikes: 0},
+					{name: "Node", Likes: 0, Dislikes: 0},
+					{name: "Angular", Likes: 0, Dislikes: 0},
+					{name: "Css", Likes: 0, Dislikes: 0},
+            	];
+
+            	$scope.reps = reps;
+
+                  $scope.Plus = function (rep) {
+                  	   
+                  	   rep.Likes++;
+                  }
+
+                  $scope.sub = function (rep) {
+                  	   
+                  	   rep.Dislikes++;
+                  }
+            });
+//-->
+</script>
+</body>
+</html>
